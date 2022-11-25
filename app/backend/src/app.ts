@@ -7,9 +7,7 @@ class App {
 
   constructor() {
     this.app = express();
-
     this.config();
-
     // Não remover essa rota
     this.app.get('/', (req, res) => res.json({ ok: true }));
   }
@@ -32,5 +30,4 @@ class App {
     this.app.listen(PORT, () => console.log(`Running on port ${PORT}`));
   }
 }
-
 export default App;
