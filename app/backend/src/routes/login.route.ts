@@ -6,4 +6,5 @@ const router = express.Router();
 
 router.post('/', LoginController.login);
 router.get('/validate', handleJwt, LoginController.getByRole);
+
 export default router;
