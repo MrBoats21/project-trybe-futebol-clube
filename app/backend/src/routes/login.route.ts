@@ -1,10 +1,10 @@
 import * as express from 'express';
-import handleJwt from '../middlewares/handleJwt';
-import LoginController from '../controller/login.controller';
+import token from '../middlewares/handleToken';
+import controller from '../controller/login.controller';
 
 const router = express.Router();
 
-router.post('/', LoginController.login);
-router.get('/validate', handleJwt, LoginController.getByRole);
+router.post('/', controller.login);
+router.get('/validate', token, controller.getByRole);
 
 export default router;

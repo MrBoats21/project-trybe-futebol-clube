@@ -1,4 +1,4 @@
-export default interface Email {
+export default interface ILogin {
   email?: string;
   password?: string;
   username?: string;
