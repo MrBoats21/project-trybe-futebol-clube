@@ -50,11 +50,19 @@ export default class MatchService {
 
     const { id } = newMatch.dataValues;
 
+    console.log(`partida ${id} criada`);
+
     return id;
   }
 
   static async finishMatch(id: number) {
     await MatchesModel.update({ inProgress: false }, { where: { id } });
+    console.log(`partida ${id} finalizada`);
+
     return { message: 'finished match' };
+  }
+
+  static async updateMatch(id: string, homeTeamGoals: string, awayTeamGoals: string) {
+    await MatchesModel.update({ homeTeamGoals, awayTeamGoals }, { where: { id } });
   }
 }

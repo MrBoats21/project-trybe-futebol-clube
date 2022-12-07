@@ -11,6 +11,7 @@ export default class LoginService {
     if (access) {
       const secret = process.env.JWT_SECRET || 'jwt_secret';
       const token = jwt.sign({ email }, secret);
+      console.log(`email no service: ${email}`);
 
       return token;
     }

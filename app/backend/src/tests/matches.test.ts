@@ -44,6 +44,17 @@ describe("Matches tests", () => {
     expect(res.body).to.deep.equal(sucessMatchMock);
   });
 
+  it("Test if admin can update the match score", async () => {
+    sinon.stub(Match, "update").resolves([0]);
+    res = await chai.request(app).patch("/matches/1").send({
+        homeTeamGoals: 3,
+        awayTeamGoals: 1
+      });
+
+    expect(res.status).to.be.equal(200);
+    expect(res.body).to.deep.equal({ message: 'Match updated' });
+  });
+
   it("tests if its not possible to create a match with two equal teams", async () => {
     sinon.stub(jwt, "verify").resolves({ id: 1 });
     res = await chai.request(app).post("/matches").send({
