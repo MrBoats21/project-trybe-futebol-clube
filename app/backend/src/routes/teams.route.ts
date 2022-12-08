@@ -1,7 +1,7 @@
-import * as express from 'express';
+import { Router } from 'express';
 import controller from '../controller/teams.controller';
 
-const router = express.Router();
+const router = Router();
 
 router.get('/', controller.getAll);
 router.get('/:id', controller.getById);

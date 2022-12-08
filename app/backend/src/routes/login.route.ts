@@ -1,8 +1,8 @@
-import * as express from 'express';
+import { Router } from 'express';
 import token from '../middlewares/handleToken';
 import controller from '../controller/login.controller';
 
-const router = express.Router();
+const router = Router();
 
 router.post('/', controller.login);
 router.get('/validate', token, controller.getByRole);

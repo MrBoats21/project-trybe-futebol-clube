@@ -5,10 +5,9 @@ import matchToken from '../middlewares/handleToken';
 
 const router = Router();
 
-router.patch('/:id/finish', controller.finishMatch);
-
 router.get('/', controller.getMatches);
 router.post('/', matchValidation, matchToken, controller.createMatch);
 router.patch('/:id', controller.updateMatch);
+router.patch('/:id/finish', controller.finishMatch);
 
 export default router;
