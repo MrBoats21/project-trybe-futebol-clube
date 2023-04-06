@@ -2,7 +2,7 @@ import React from 'react';
 
 const Loading = () => (
   <div>
-    Loading...
+    {/*Loading*/}
   </div>
 );
 
